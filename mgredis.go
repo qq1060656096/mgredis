@@ -64,12 +64,12 @@ type Manager registry.Manager[RedisConfig, *redis.Client]
 // 用于管理多个命名的Redis客户端实例
 // 支持惰性初始化（首次Get时创建）和安全关闭所有资源
 func New() Group {
-	return registry.NewGroup[RedisConfig, *redis.Client](opener, closer)
+	return registry.New[RedisConfig, *redis.Client](opener, closer)
 }
 
 // NewManager 创建多组Redis客户端管理器
 // 用于管理多个组，每个组可以包含多个命名的Redis客户端实例
 // 适用于需要按业务场景分组管理Redis连接的复杂场景
 func NewManager() Manager {
-	return registry.New[RedisConfig, *redis.Client](opener, closer)
+	return registry.NewManager[RedisConfig, *redis.Client](opener, closer)
 }
