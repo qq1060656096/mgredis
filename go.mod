@@ -3,7 +3,7 @@ module github.com/qq1060656096/mgredis
 go 1.21
 
 require (
-	github.com/qq1060656096/bizutil v0.0.4
+	github.com/qq1060656096/bizutil v0.0.5
 	github.com/redis/go-redis/v9 v9.7.0
 )
 
